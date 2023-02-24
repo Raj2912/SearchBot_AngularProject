@@ -8,15 +8,17 @@ import { CoreserviceService } from '../Services/coreservice.service';
 })
 export class WelcomePageComponent {
   textboxValue: string = '';
-
-
   constructor( public coreService: CoreserviceService) {}
 
   ngOnInit(){
-    this.coreService.getData().subscribe(data => {
-      console.log(data);
-    });
+    console.log(this.textboxValue);
+    // this.coreService.getData().subscribe(data => {
+      // textboxValue
+    // });
   }
 
-  searchTextBox = this.textboxValue;
+  onKey(event: any) { // without type info
+    this.textboxValue = event.target.value;
+    console.log(this.textboxValue)
+  }
 }
