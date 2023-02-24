@@ -18,5 +18,5 @@ export class WelcomePageComponent {
     });
   }
 
-  texboxresult = this.textboxValue;
+  searchTextBox = this.textboxValue;
 }
