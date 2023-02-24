@@ -13,7 +13,7 @@ export class WelcomePageComponent {
   ngOnInit(){
     console.log(this.textboxValue);
     // this.coreService.getData().subscribe(data => {
-      // textboxValue
+    //   console.log(data);
     // });
   }
 

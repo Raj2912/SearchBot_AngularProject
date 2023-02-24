@@ -11,5 +11,6 @@ export class CoreserviceService {
 
   getData(): Observable<any> {
     return this.http.get('http://localhost:8000/search/?search');
+    
   }
 }
