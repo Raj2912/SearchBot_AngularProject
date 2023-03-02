@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CoreserviceService } from '../Services/coreservice.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-welcome-page',
@@ -8,9 +10,11 @@ import { CoreserviceService } from '../Services/coreservice.service';
 })
 export class WelcomePageComponent {
   textboxValue: string = '';
-  constructor( public coreService: CoreserviceService) {}
+  constructor(  private http: HttpClient, public coreService: CoreserviceService) {}
 
-  onKey(event: any) { // without type info
+  onKey(event: any) { 
+    let responseObserver = this.http.get('http://localhost:8000/search/?search=raj');
+    responseObserver.subscribe(() => {});
     console.log(this.textboxValue)
   }
 }
